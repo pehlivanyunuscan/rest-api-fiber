@@ -1,10 +1,14 @@
 package main
 
 import (
+	"fiber_rest/database"
+
 	"github.com/gofiber/fiber/v3"
 )
 
 func main() {
+
+	database.Connect() // Başta bir kez bağlantı kuruyoruz
 
 	app := fiber.New()
 
