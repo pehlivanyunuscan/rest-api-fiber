@@ -5,7 +5,9 @@ This project is a simple RESTful API built with Go using the Fiber web framework
 **Features**
 
 Create, read, update, and delete Todo items
+
 Uses SQLite for persistent storage
+
 Clean project structure with separation of concerns
 
 **Project Structure**
@@ -25,11 +27,13 @@ Clean project structure with separation of concerns
 ```
 
 **Getting Started**
+
 **Installation**
 
 1. **Clone the repository**:
 
 git clone <https://github.com/pehlivanyunuscan/rest-api-fiber>
+
 cd rest-api-fiber
 
 2. **Install dependencies**:
@@ -64,7 +68,9 @@ The server will start at `http://localhost:3000`.
 1.**Create a Todo**:
 
 curl -X POST http://localhost:3000/todos \
+  
   -H "Content-Type: application/json" \
+  
   -d '{"title":"Buy groceries"}'
 
 2. **Get all Todos**:
@@ -76,24 +82,33 @@ curl `http://localhost:3000/todos`
 You can also use [Postman](https://www.postman.com/) to interact with the API:
 
 1. **Start your server:**  
+
    Make sure the API is running at `http://localhost:3000`.
 
-2. **Create a Todo:**  
+3. **Create a Todo:**
+
    - Set method to `POST`
+   
    - URL: `http://localhost:3000/todos`
-   - Body: Select `raw` and `JSON`, then enter:
+   
+   -  Body: Select `raw` and `JSON`, then enter:
+
      ```json
      {
        "title": "Buy groceries"
      }
      ```
 
-3. **Get all Todos:**  
+5. **Get all Todos:**  
+   
    - Set method to `GET`
+   
    - URL: `http://localhost:3000/todos`
 
-4. **Get, Update, or Delete a Todo by ID:**  
+6. **Get, Update, or Delete a Todo by ID:**  
+   
    - Use the endpoints `/todos/:todoID` with the appropriate HTTP method (`GET`, `PUT`, or `DELETE`).
+   
    - For `PUT`, provide a JSON body with the updated title.
 
 
