@@ -31,18 +31,19 @@ Clean project structure with separation of concerns
 **Installation**
 
 1. **Clone the repository**:
-
+```sh
 git clone <https://github.com/pehlivanyunuscan/rest-api-fiber>
 
 cd rest-api-fiber
-
+```
 2. **Install dependencies**:
-
+```sh
 go mod tidy
-
+```
 3. **Run the application**:
-
+```sh
 go run main.go
+```
 
 The server will start at `http://localhost:3000`.
 
@@ -58,25 +59,25 @@ The server will start at `http://localhost:3000`.
 | DELETE | `/todos/:todoID`    | Delete a Todo by ID        |
 
 **Example Todo JSON**
-
+```json
 {
   "title": "Buy groceries"
 }
-
+```
 **Example Usage**
 
 1.**Create a Todo**:
-
+```sh
 curl -X POST http://localhost:3000/todos \
   
   -H "Content-Type: application/json" \
   
   -d '{"title":"Buy groceries"}'
-
+```
 2. **Get all Todos**:
-
+```sh
 curl `http://localhost:3000/todos`
-
+```
 **Using Postman**
 
 You can also use [Postman](https://www.postman.com/) to interact with the API:
