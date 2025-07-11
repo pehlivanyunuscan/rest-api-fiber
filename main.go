@@ -21,8 +21,11 @@ func main() {
 		})
 	})
 
-	app.Post("/todos", services.CreateTodo) // Todo oluşturma endpoint'i
-	app.Get("/todos", services.GetTodos)    // Tüm Todo'ları listeleme endpoint'i
+	app.Post("/todos", services.CreateTodo)           // Todo oluşturma endpoint'i
+	app.Get("/todos", services.GetTodos)              // Tüm Todo'ları listeleme endpoint'i
+	app.Get("/todos/:todoID", services.GetTodo)       // ID'ye göre Todo alma endpoint'i
+	app.Put("/todos/:todoID", services.UpdateTodo)    // ID'ye göre Todo güncelleme endpoint'i
+	app.Delete("/todos/:todoID", services.DeleteTodo) // ID'ye göre Todo sil
 
 	app.Listen("localhost:3000")
 }
