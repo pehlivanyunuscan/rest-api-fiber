@@ -9,6 +9,7 @@ Uses SQLite for persistent storage
 Clean project structure with separation of concerns
 
 **Project Structure**
+```
 .
 ├── main.go                # Application entry point and route definitions
 ├── go.mod                 # Go module definition
@@ -21,6 +22,7 @@ Clean project structure with separation of concerns
 │   └── todo.go
 └── types/                 # Type definitions (DTOs)
     └── todo.go
+```
 
 **Getting Started**
 **Installation**
@@ -52,6 +54,7 @@ The server will start at `http://localhost:3000`.
 | DELETE | `/todos/:todoID`    | Delete a Todo by ID        |
 
 **Example Todo JSON**
+
 {
   "title": "Buy groceries"
 }
