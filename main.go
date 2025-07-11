@@ -26,7 +26,15 @@ func main() {
 	app.Post("/todos", func(c *fiber.Ctx) error {
 		t := new(TodoCreate) // TodoCreate tipinde yeni bir değişken oluşturuyoruz
 		if err := c.BodyParser(t); err != nil {
-			return err
+			return c.Status(400).JSON(fiber.Map{ // Eğer body parse edilemezse, 400 hatası döndürüyoruz
+				"message": "BAD REQUEST",
+			})
+		}
+
+		if t.Title == "" { // Eğer başlık boş ise, 400 hatası döndürüyoruz
+			return c.Status(400).JSON(fiber.Map{
+				"message": "Title is required",
+			})
 		}
 
 		newTodo := dal.Todo{
@@ -35,12 +43,15 @@ func main() {
 		res := database.DB.Create(&newTodo) // Veritabanına yeni Todo ekliyoruz
 
 		if res.Error != nil {
-			return res.Error // Eğer hata varsa, hatayı döndürüyoruz
+			return c.Status(500).JSON(fiber.Map{ // Eğer veritabanına ekleme işlemi başarısız olursa, 500 hatası döndürüyoruz
+				"message": "Failed to create Todo",
+			})
 		}
 
 		return c.JSON(fiber.Map{ // Başarılı bir şekilde eklenirse, yeni Todo'yu JSON olarak döndürüyoruz
 			"message": "Todo created successfully!",
 		})
+
 	})
 
 	app.Listen("localhost:3000")

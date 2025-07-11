@@ -7,16 +7,16 @@ import (
 	"gorm.io/gorm"
 )
 
-var DB *gorm.DB
+var DB *gorm.DB // Global variable to hold the database connection
 
 func Connect() {
 
-	db, err := gorm.Open(sqlite.Open("myDatabase.db"))
+	db, err := gorm.Open(sqlite.Open("myDatabase.db"), &gorm.Config{}) // Open a connection to the SQLite database
 
 	if err != nil {
 		fmt.Println("DATABASE CONNECTION ERROR")
 	}
 
-	DB = db
+	DB = db // Assign the database connection to the global variable
 	fmt.Println("DATABASE CONNECTED")
 }
