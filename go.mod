@@ -13,9 +13,11 @@ require (
 	github.com/gofiber/fiber/v2 v2.52.8 // indirect
 	github.com/gofiber/schema v1.2.0 // indirect
 	github.com/gofiber/utils/v2 v2.0.0-beta.7 // indirect
+	github.com/golang-jwt/jwt/v5 v5.2.3 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
+	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/klauspost/compress v1.17.11 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
@@ -28,9 +30,9 @@ require (
 	github.com/valyala/fasthttp v1.58.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
-	golang.org/x/crypto v0.31.0 // indirect
-	golang.org/x/net v0.31.0 // indirect
-	golang.org/x/sys v0.28.0 // indirect
+	golang.org/x/crypto v0.40.0 // indirect
+	golang.org/x/net v0.41.0 // indirect
+	golang.org/x/sys v0.34.0 // indirect
 	golang.org/x/text v0.27.0 // indirect
 	gorm.io/gorm v1.30.0 // indirect
 	modernc.org/libc v1.22.5 // indirect

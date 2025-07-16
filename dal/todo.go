@@ -2,6 +2,7 @@ package dal
 
 import (
 	"fiber_rest/database"
+	"fiber_rest/types"
 
 	"gorm.io/gorm"
 )
@@ -48,4 +49,13 @@ func DeleteTodo(todoID string) error {
 
 	res = database.DB.Delete(&todo) // Todo'yu veritabanından siliyoruz
 	return res.Error                // Eğer hata varsa, hata döndürüyoruz
+}
+func CreateUser(DB *gorm.DB, user *types.User) error {
+	res := DB.Create(user) // Kullanıcıyı veritabanına ekliyoruz
+	return res.Error       // Eğer hata varsa, hata döndürüyoruz
+}
+func GetUserByEmail(DB *gorm.DB, email string) (*types.User, error) {
+	var user types.User
+	result := DB.Where("email = ?", email).First(&user) // E-posta ile kullanıcıyı alıyoruz
+	return &user, result.Error                          // Eğer hata varsa, hata döndürüyoruz
 }
